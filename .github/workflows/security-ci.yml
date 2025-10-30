@@ -1,0 +1,24 @@
+name: Security CI (Reusable)
+
+on:
+  workflow_call:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  run-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout caller repo
+        uses: actions/checkout@v4
+
+      - name: Run SAST
+        uses: ./.github/actions/sast
+
+      - name: Run SonarQube Coverage
+        uses: ./.github/actions/sonarqube
+
+      - name: Run Unit Tests
+        uses: ./.github/actions/unittest
