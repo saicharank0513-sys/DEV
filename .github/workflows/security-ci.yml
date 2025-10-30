@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run SAST
-        uses: ./.github/actions/sastsaicharank0513-sys/DEV/.github/workflows/security-ci.yml@main
+        uses: saicharank0513-sys/DEV/.github/workflows/security-ci.yml@main
 
       - name: Run SonarQube Coverage
         uses: saicharank0513-sys/DEV/.github/workflows/security-ci.yml@main
