@@ -1,0 +1,8 @@
+name: SAST Scan
+description: Simple SAST action
+runs:
+  using: composite
+  steps:
+    - name: Echo SAST
+      shell: bash
+      run: echo "I am doing SAST scan"
