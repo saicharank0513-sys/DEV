@@ -6,19 +6,17 @@ on:
 
 permissions:
   contents: read
+  actions: read
 
 jobs:
   run-checks:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout caller repo
-        uses: actions/checkout@v4
-
       - name: Run SAST
-        uses: saicharank0513-sys/DEV/.github/workflows/security-ci.yml@main
+        uses: saicharank0513-sys/DEV/.github/actions/sast@main
 
       - name: Run SonarQube Coverage
-        uses: saicharank0513-sys/DEV/.github/workflows/security-ci.yml@main
+        uses: saicharank0513-sys/DEV/.github/actions/sonarqube@main
 
       - name: Run Unit Tests
-        uses: saicharank0513-sys/DEV/.github/workflows/security-ci.yml@main
+        uses: saicharank0513-sys/DEV/.github/actions/unittest@main
