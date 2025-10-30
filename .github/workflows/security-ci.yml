@@ -15,10 +15,10 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run SAST
-        uses: ./.github/actions/sast
+        uses: ./.github/actions/sastsaicharank0513-sys/DEV/.github/workflows/security-ci.yml@main
 
       - name: Run SonarQube Coverage
-        uses: ./.github/actions/sonarqube
+        uses: saicharank0513-sys/DEV/.github/workflows/security-ci.yml@main
 
       - name: Run Unit Tests
-        uses: ./.github/actions/unittest
+        uses: saicharank0513-sys/DEV/.github/workflows/security-ci.yml@main
