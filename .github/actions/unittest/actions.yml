@@ -1,0 +1,8 @@
+name: Unit Test
+description: Simple unittest action
+runs:
+  using: composite
+  steps:
+    - name: Echo unittest
+      shell: bash
+      run: echo "I am doing unittesting"
