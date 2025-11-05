@@ -15,15 +15,25 @@ permissions:
 jobs:
   run-checks:
     runs-on: ubuntu-latest
+
     steps:
+      # 1) Check out the repo that actually contains the actions (Repo A = DEV)
+      - name: Checkout DEV (actions repo)
+        uses: actions/checkout@v4
+        with:
+          repository: saicharank0513-sys/DEV
+          ref: main            # or a tag like v1 once you create it
+          path: dev-src        # <— will create ./dev-src
+
+      # 2) Now call the local actions from that checked-out folder
       - name: Run SAST
-        uses: ./.github/actions/sast
+        uses: ./dev-src/.github/actions/sast
 
       - name: Run SonarQube Coverage
-        uses: ./.github/actions/sonarqube
+        uses: ./dev-src/.github/actions/sonarqube
 
       - name: Run Unit Tests
-        uses: ./.github/actions/unittest
+        uses: ./dev-src/.github/actions/unittest
 
       - name: Orchestrator message
         if: ${{ inputs.service_name != '' }}
