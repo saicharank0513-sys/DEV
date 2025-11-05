@@ -2,6 +2,10 @@ name: Security CI (Reusable)
 
 on:
   workflow_call:
+    inputs:
+      service_name:
+        required: false
+        type: string
   workflow_dispatch:
 
 permissions:
@@ -20,3 +24,8 @@ jobs:
 
       - name: Run Unit Tests
         uses: ./.github/actions/unittest
+
+      - name: Orchestrator message
+        if: ${{ inputs.service_name != '' }}
+        shell: bash
+        run: echo "microservice-updated-${{ inputs.service_name }}"
