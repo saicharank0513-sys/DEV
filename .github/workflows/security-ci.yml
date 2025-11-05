@@ -13,10 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run SAST
-        uses: saicharank0513-sys/DEV/.github/actions/sast@main
+        uses: ./.github/actions/sast
 
       - name: Run SonarQube Coverage
-        uses: saicharank0513-sys/DEV/.github/actions/sonarqube@main
+        uses: ./.github/actions/sonarqube
 
       - name: Run Unit Tests
-        uses: saicharank0513-sys/DEV/.github/actions/unittest@main
+        uses: ./.github/actions/unittest
