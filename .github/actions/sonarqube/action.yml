@@ -1,5 +1,5 @@
 name: SonarQube Coverage
-description: Simple SonarQube action
+description: Simple SonarQube composite action (demo)
 runs:
   using: composite
   steps:

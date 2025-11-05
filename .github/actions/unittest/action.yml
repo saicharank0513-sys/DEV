@@ -1,5 +1,5 @@
 name: Unit Test
-description: Simple unittest action
+description: Simple unittest composite action (demo)
 runs:
   using: composite
   steps:

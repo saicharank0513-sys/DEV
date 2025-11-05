@@ -1,5 +1,5 @@
 name: SAST Scan
-description: Simple SAST action
+description: Simple SAST composite action (demo)
 runs:
   using: composite
   steps:
